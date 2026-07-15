@@ -10,7 +10,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "pnpm --filter @tickpad/desktop dev",
-    "build": "pnpm -r --filter './packages/**' --filter './plugins/**' --filter './examples/**' build && pnpm --filter @tickpad/desktop build",
+    "build": "pnpm -r --filter './packages/**' --filter './plugins/**' --filter './examples/**' build && pnpm --filter @tickpad/desktop build && pnpm --filter @tickpad/site build",
     "package:mac": "pnpm --filter @tickpad/desktop package:mac",
     "test": "vitest run",
     "typecheck": "tsc -b tsconfig.base.json --pretty false",

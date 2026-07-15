@@ -6,6 +6,7 @@ apps/*/release/
 coverage/
 test-results/
 .playwright-cli/
+.vercel/
 .idea/
 *.log
 *.tsbuildinfo

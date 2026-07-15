@@ -4,6 +4,9 @@ Tickpad is an Alpha, plugin-first Markdown editor built with Electron, React, an
 
 The editor should be useful on its own, but the project's main product direction is a public plugin surface for commands, panels, Markdown blocks, exporters, events, configuration, and permissioned host capabilities.
 
+- [Website](https://tickpad.vercel.app)
+- [Download the latest macOS preview](https://github.com/nemoob/tickpad/releases/latest)
+
 ## Alpha Status
 
 Tickpad is early software. APIs, plugins, file formats, and behavior may change without migration support. Keep backups of work that matters to you.
@@ -11,9 +14,9 @@ Tickpad is early software. APIs, plugins, file formats, and behavior may change 
 The project currently supports:
 
 - Running from source on a development machine.
-- A local, unsigned macOS arm64 application build.
+- An unsigned macOS Apple Silicon preview distributed through GitHub Releases.
 
-There are no official signed release artifacts yet. Do not treat a locally built app as a signed, notarized, or supported distribution.
+The preview build is not signed or notarized. On first launch, macOS may require opening the app from the Finder context menu.
 
 ## Run From Source
 
@@ -48,6 +51,7 @@ pnpm package:mac -- --arm64
 
 ```txt
 apps/desktop              Electron main, preload, and renderer application
+apps/site                 Static product website deployed on Vercel
 packages/plugin-api       Public plugin contracts
 packages/plugin-host      Plugin lifecycle, registries, and permissions
 packages/editor-core      Document state and editor commands
