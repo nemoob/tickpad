@@ -262,8 +262,9 @@ h1 {
 
 .hero-product {
   position: absolute;
+  top: 465px;
   right: max(28px, 5vw);
-  bottom: -458px;
+  bottom: auto;
   left: max(28px, 5vw);
   z-index: 1;
   overflow: hidden;
@@ -304,7 +305,7 @@ h1 {
 
 .product-shot {
   overflow: hidden;
-  background: #e9ebee;
+  background: var(--carbon);
 }
 
 .product-shot img {

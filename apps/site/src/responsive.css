@@ -8,7 +8,7 @@
   }
 
   .hero-product {
-    bottom: -330px;
+    top: 475px;
   }
 
   .section-heading {
@@ -107,8 +107,8 @@
   }
 
   .hero-product {
+    top: 532px;
     right: 16px;
-    bottom: -34px;
     left: 16px;
   }
 
