@@ -1,0 +1,321 @@
+.workspace {
+  display: grid;
+  grid-template-rows: 54px minmax(0, 1fr) 30px;
+  min-width: 0;
+  height: 100vh;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.topbar,
+.statusbar {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  backdrop-filter: blur(16px);
+}
+
+.topbar {
+  position: relative;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  overflow: visible;
+  padding: 0 14px;
+  border-radius: 12px 12px 0 0;
+  transition: padding 160ms ease;
+  app-region: drag;
+  -webkit-app-region: drag;
+}
+
+.app-shell.rail-collapsed .topbar {
+  padding-left: 104px;
+}
+
+.topbar-left,
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topbar-left {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.topbar-actions {
+  flex: 0 0 auto;
+}
+
+.topbar button {
+  app-region: no-drag;
+  -webkit-app-region: no-drag;
+}
+
+.document-tabs {
+  align-self: stretch;
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  flex: 1;
+  gap: 0;
+  overflow-x: auto;
+  padding: 0;
+  scrollbar-width: none;
+  app-region: drag;
+  -webkit-app-region: drag;
+}
+
+.document-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.document-tab {
+  position: relative;
+  flex: 0 1 164px;
+  min-width: 128px;
+  max-width: 188px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: space-between;
+  padding: 0 12px;
+  border: 0;
+  border-right: 1px solid color-mix(in srgb, var(--line) 62%, transparent);
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  app-region: no-drag;
+  -webkit-app-region: no-drag;
+}
+
+.document-tab:hover {
+  background: color-mix(in srgb, var(--surface-2) 58%, transparent);
+  color: var(--text);
+}
+
+.document-tab.active {
+  background: color-mix(in srgb, var(--surface) 90%, var(--surface-2));
+  color: var(--text);
+}
+
+.document-tab.active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  border-radius: 0;
+  background: var(--accent-2);
+}
+
+.document-tab-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 560;
+}
+
+.document-tab.active .document-tab-name {
+  font-weight: 650;
+}
+
+.document-tab-menu,
+.document-tab-close {
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  opacity: 0.62;
+}
+
+.document-tab-menu {
+  opacity: 0.5;
+}
+
+.document-tab-menu:hover,
+.document-tab-close:hover {
+  background: var(--surface-2);
+  color: var(--text);
+  opacity: 1;
+}
+
+.tab-context-menu {
+  position: absolute;
+  z-index: 60;
+  width: 168px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  box-shadow: var(--shadow);
+  app-region: no-drag;
+  -webkit-app-region: no-drag;
+}
+
+.tab-context-menu button {
+  width: 100%;
+  height: 30px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  font-size: 12px;
+}
+
+.tab-context-menu button:hover {
+  background: var(--surface-2);
+}
+
+.theme-picker {
+  position: relative;
+}
+
+.theme-picker-trigger {
+  height: 32px;
+  min-width: 118px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  padding: 0 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.theme-picker-trigger:hover,
+.theme-picker-trigger:focus-visible {
+  border-color: color-mix(in srgb, var(--accent) 58%, var(--line));
+  outline: none;
+}
+
+.theme-picker-label {
+  max-width: 84px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 620;
+}
+
+.theme-swatch {
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.theme-swatch.light {
+  background: #ffffff;
+  color: #111111;
+}
+
+.theme-swatch.dark {
+  background: #202024;
+  color: #fbfbfc;
+}
+
+.theme-swatch.codex {
+  border-color: #c9d3ca;
+  background: #f7f8f4;
+  color: #1f6feb;
+}
+
+.theme-swatch.vscode {
+  border-color: #007acc;
+  background: #1e1e1e;
+  color: #d4d4d4;
+}
+
+.theme-swatch.idea {
+  border-color: #a5b4fc;
+  background: #eef1f7;
+  color: #7c3aed;
+}
+
+.theme-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 40;
+  width: 188px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.theme-menu-item {
+  width: 100%;
+  height: 34px;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) 16px;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  font-size: 12px;
+}
+
+.theme-menu-item:hover,
+.theme-menu-item.selected {
+  background: var(--surface-2);
+}
+
+.icon-button {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.icon-button:hover,
+.command-button:hover {
+  border-color: color-mix(in srgb, var(--accent) 60%, var(--line));
+}
+
+.icon-button.selected {
+  border-color: color-mix(in srgb, var(--accent) 70%, var(--line));
+  background: var(--surface-2);
+  color: var(--accent);
+}

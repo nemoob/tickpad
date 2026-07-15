@@ -1,0 +1,135 @@
+:root[data-code-block-style="soft"] {
+  --code-block-bg: var(--code-bg);
+  --code-block-text: var(--code-text);
+  --code-block-muted: var(--code-muted);
+  --code-block-control-bg: var(--code-control-bg);
+  --code-block-active-bg: var(--code-active-bg);
+  --code-block-active-gutter-bg: var(--code-active-gutter-bg);
+  --code-block-border: color-mix(in srgb, var(--line) 72%, transparent);
+  --code-block-radius: 6px;
+}
+
+:root[data-code-block-style="editor"] {
+  --code-block-bg: color-mix(in srgb, var(--surface-2) 78%, var(--surface));
+  --code-block-text: var(--code-text);
+  --code-block-muted: color-mix(in srgb, var(--code-muted) 82%, var(--text));
+  --code-block-control-bg: color-mix(in srgb, var(--surface) 72%, var(--surface-2));
+  --code-block-active-bg: color-mix(in srgb, var(--accent-2) 12%, transparent);
+  --code-block-active-gutter-bg: color-mix(in srgb, var(--accent-2) 16%, transparent);
+  --code-block-border: color-mix(in srgb, var(--line) 86%, transparent);
+  --code-block-radius: 4px;
+}
+
+:root[data-code-block-style="terminal"] {
+  --code-block-bg: #111318;
+  --code-block-text: #e6edf3;
+  --code-block-muted: #8b949e;
+  --code-block-control-bg: #1c2128;
+  --code-block-active-bg: rgba(88, 166, 255, 0.13);
+  --code-block-active-gutter-bg: rgba(88, 166, 255, 0.16);
+  --code-block-border: #30363d;
+  --code-block-radius: 7px;
+}
+
+.milkdown-host .milkdown-code-block {
+  border: 1px solid var(--code-block-border) !important;
+  border-radius: var(--code-block-radius) !important;
+  background: var(--code-block-bg) !important;
+  color: var(--code-block-text) !important;
+}
+
+.milkdown-host .milkdown-code-block .language-button,
+.milkdown-host .milkdown-code-block .copy-button {
+  background: var(--code-block-control-bg) !important;
+  color: var(--code-block-text) !important;
+}
+
+.milkdown-host .milkdown-code-block .language-picker .list-wrapper,
+.milkdown-host .milkdown-code-block .language-picker .search-box,
+.milkdown-host .milkdown-code-block .cm-editor,
+.milkdown-host .milkdown-code-block .cm-scroller,
+.milkdown-host .milkdown-code-block .cm-gutters {
+  background: var(--code-block-bg) !important;
+  color: var(--code-block-text) !important;
+}
+
+.milkdown-host .milkdown-code-block .language-picker .search-input,
+.milkdown-host .milkdown-code-block .language-picker .language-list-item,
+.milkdown-host .milkdown-code-block .cm-line {
+  color: var(--code-block-text) !important;
+}
+
+.milkdown-host .milkdown-code-block .language-picker .language-list-item:hover,
+.milkdown-host .milkdown-code-block .cm-activeLine {
+  background: var(--code-block-active-bg) !important;
+}
+
+.milkdown-host .milkdown-code-block .cm-gutters,
+.milkdown-host .milkdown-code-block .cm-gutterElement,
+.milkdown-host .milkdown-code-block .cm-activeLineGutter {
+  color: var(--code-block-muted) !important;
+}
+
+.milkdown-host .milkdown-code-block .cm-activeLineGutter {
+  background: var(--code-block-active-gutter-bg) !important;
+}
+
+.code-block-style-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.code-block-style-card {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 2px 8px;
+  align-items: center;
+  min-height: 58px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.code-block-style-card.selected {
+  border-color: color-mix(in srgb, var(--accent) 46%, var(--line));
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+}
+
+.code-block-style-card strong {
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.code-block-style-card > span:last-child {
+  grid-column: 2;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.code-block-style-swatch {
+  grid-row: span 2;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+}
+
+.code-block-style-swatch.soft {
+  background: linear-gradient(135deg, #f3f3f3 0 52%, #dfe7f3 52%);
+}
+
+.code-block-style-swatch.editor {
+  background: linear-gradient(135deg, #eef1f7 0 52%, #d7dce8 52%);
+}
+
+.code-block-style-swatch.terminal {
+  background: linear-gradient(135deg, #111318 0 52%, #30363d 52%);
+}

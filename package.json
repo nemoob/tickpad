@@ -1,0 +1,29 @@
+{
+  "name": "tickpad",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "description": "Tickpad is a plugin-first Markdown editor.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "pnpm --filter @tickpad/desktop dev",
+    "build": "pnpm -r --filter './packages/**' --filter './plugins/**' --filter './examples/**' build && pnpm --filter @tickpad/desktop build",
+    "package:mac": "pnpm --filter @tickpad/desktop package:mac",
+    "test": "vitest run",
+    "typecheck": "tsc -b tsconfig.base.json --pretty false",
+    "screenshot": "node scripts/screenshot.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^22.13.13",
+    "@vitejs/plugin-react": "^5.1.1",
+    "electron-builder": "^26.15.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0",
+    "vitest": "^4.0.16"
+  },
+  "packageManager": "pnpm@11.7.0"
+}

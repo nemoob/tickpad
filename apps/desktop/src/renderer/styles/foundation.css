@@ -1,0 +1,164 @@
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f5f5f5;
+  --surface: #ffffff;
+  --surface-2: #eeeeee;
+  --text: #2b2b2b;
+  --muted: #666666;
+  --line: #e0e0e0;
+  --accent: #111111;
+  --accent-2: #2563eb;
+  --warn: #a85d19;
+  --code-bg: #f3f3f3;
+  --code-text: #1f2937;
+  --code-muted: #6b7280;
+  --code-control-bg: #e9e9e9;
+  --code-active-bg: #e8f2ff;
+  --code-active-gutter-bg: #d8eaff;
+  --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  --shell-font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --editor-text-font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --editor-code-font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --editor-font-size: 16px;
+  --editor-code-font-size: 14px;
+  --selection-toolbar-button-size: 26px;
+  --selection-toolbar-icon-size: 16px;
+  --rail-width: 228px;
+}
+
+:root[data-theme="light"] :is(.milkdown-host .ProseMirror, .plain-text-editor) {
+  color: #484848 !important;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #08090a;
+  --surface: #151517;
+  --surface-2: #202024;
+  --text: #fbfbfc;
+  --muted: #c0c2ca;
+  --line: #3a3d44;
+  --accent: #8ab4f8;
+  --accent-2: #c4b5fd;
+  --warn: #e0a35c;
+  --code-bg: #17191d;
+  --code-text: #f0f3f8;
+  --code-muted: #b2bac7;
+  --code-control-bg: #282b31;
+  --code-active-bg: #2d3440;
+  --code-active-gutter-bg: #363d49;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.42);
+  --editor-font-size: 16px;
+  --editor-code-font-size: 14px;
+  --selection-toolbar-button-size: 26px;
+  --selection-toolbar-icon-size: 16px;
+  --rail-width: 228px;
+}
+
+:root[data-theme="codex"] {
+  --bg: #f7f8f4;
+  --surface: #ffffff;
+  --surface-2: #eef1ea;
+  --text: #18201a;
+  --muted: #697266;
+  --line: #d9dfd2;
+  --accent: #1f6feb;
+  --accent-2: #1e5e9c;
+  --warn: #a85d19;
+  --code-bg: #f3f5f1;
+  --code-text: #354052;
+  --code-muted: #7a8493;
+  --code-control-bg: #e8ebe6;
+  --code-active-bg: #e9eef5;
+  --code-active-gutter-bg: #dbe4ee;
+  --shadow: 0 20px 50px rgba(28, 39, 32, 0.1);
+}
+
+:root[data-theme="vscode"] {
+  color-scheme: dark;
+  --bg: #1e1e1e;
+  --surface: #252526;
+  --surface-2: #2d2d30;
+  --text: #f3f3f3;
+  --muted: #c8c8c8;
+  --line: #3c3c3c;
+  --accent: #007acc;
+  --accent-2: #3794ff;
+  --warn: #d19a66;
+  --code-bg: #1f1f1f;
+  --code-text: #d4d4d4;
+  --code-muted: #858585;
+  --code-control-bg: #333333;
+  --code-active-bg: #264f78;
+  --code-active-gutter-bg: #333f4f;
+}
+
+:root[data-theme="idea"] {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-2: #eef1f7;
+  --text: #1f2430;
+  --muted: #697386;
+  --line: #d7dce8;
+  --accent: #7c3aed;
+  --accent-2: #1677ff;
+  --warn: #b45309;
+  --code-bg: #f3f5fb;
+  --code-text: #2f3545;
+  --code-muted: #7b8496;
+  --code-control-bg: #e8edf7;
+  --code-active-bg: #e8f0ff;
+  --code-active-gutter-bg: #dae8ff;
+}
+
+:root[data-theme="dark"] .app-shell {
+  background: var(--bg);
+}
+
+:root[data-theme="vscode"] .app-shell {
+  background: var(--bg);
+}
+
+:root[data-theme="dark"] .file-rail {
+  background: #101114;
+  box-shadow: none;
+}
+
+:root[data-theme="vscode"] .file-rail {
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  box-shadow: none;
+}
+
+:root[data-theme="dark"] .topbar,
+:root[data-theme="dark"] .statusbar {
+  border-color: var(--line);
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+}
+
+:root[data-theme="vscode"] .topbar,
+:root[data-theme="vscode"] .statusbar {
+  border-color: var(--line);
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 980px;
+  min-height: 680px;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--shell-font-family);
+  letter-spacing: 0;
+  -webkit-app-region: no-drag;
+}
+
+button,
+textarea {
+  font: inherit;
+}

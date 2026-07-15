@@ -1,0 +1,16 @@
+.milkdown-host .ProseMirror a {
+  color: var(--accent-2);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+  text-decoration-color: color-mix(in srgb, var(--accent-2) 58%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.milkdown-host .ProseMirror a:visited {
+  color: var(--accent-2);
+}
+
+.milkdown-host .ProseMirror a:hover {
+  text-decoration-color: currentColor;
+}

@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@tickpad/plugin-api": ["packages/plugin-api/src/index.ts"],
+      "@tickpad/plugin-host": ["packages/plugin-host/src/index.ts"],
+      "@tickpad/markdown-engine": ["packages/markdown-engine/src/index.ts"],
+      "@tickpad/editor-core": ["packages/editor-core/src/index.ts"],
+      "@tickpad/editor-ui": ["packages/editor-ui/src/index.ts"],
+      "@tickpad/config": ["packages/config/src/index.ts"],
+      "@tickpad/export": ["packages/export/src/index.ts"],
+      "@tickpad/shared": ["packages/shared/src/index.ts"],
+      "@tickpad/plugin-word-count": ["plugins/word-count/src/index.ts"],
+      "@tickpad/plugin-mermaid": ["plugins/mermaid/src/index.ts"],
+      "@tickpad/plugin-wechat-export": ["plugins/wechat-export/src/index.ts"],
+      "@tickpad/plugin-ai-writer": ["plugins/ai-writer/src/index.ts"],
+      "@tickpad/plugin-vercel-templates": ["plugins/vercel-templates/src/index.ts"]
+    }
+  },
+  "include": [
+    "apps/**/*.ts",
+    "apps/**/*.tsx",
+    "packages/**/*.ts",
+    "plugins/**/*.ts",
+    "examples/**/*.ts",
+    "scripts/**/*.mjs"
+  ]
+}

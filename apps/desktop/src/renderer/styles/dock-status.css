@@ -1,0 +1,109 @@
+.plugin-dock {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+}
+
+.dock-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plugin-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.plugin-tabs button,
+.command-button {
+  min-height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.plugin-tabs button {
+  padding: 0 10px;
+  color: var(--muted);
+}
+
+.plugin-tabs button.selected {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.panel-output,
+.permission-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background: var(--surface-2);
+}
+
+.panel-output span,
+.panel-output strong,
+.permission-card span,
+.permission-card strong {
+  display: block;
+}
+
+.panel-output span,
+.permission-card span,
+.permission-card p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.panel-output strong {
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+.permission-card strong {
+  margin-top: 4px;
+  color: var(--warn);
+}
+
+.permission-card p {
+  margin: 8px 0 0;
+  line-height: 1.45;
+}
+
+.command-button {
+  width: 100%;
+  padding: 0 12px;
+}
+
+.statusbar {
+  gap: 14px;
+  padding: 0 14px 0 10px;
+  border-top: 1px solid var(--line);
+  border-bottom: 0;
+  border-radius: 0 0 12px 12px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.statusbar-path {
+  flex: 1;
+  min-width: 80px;
+  overflow: hidden;
+  color: color-mix(in srgb, var(--muted) 82%, var(--text));
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 1080px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plugin-dock {
+    display: none;
+  }
+}
