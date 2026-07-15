@@ -35,8 +35,10 @@ try {
   await waitForServer();
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1440, height: 920 }, deviceScaleFactor: 1 });
+  await page.addInitScript(() => localStorage.setItem("tickpad:theme", "dark"));
   await page.goto(url, { waitUntil: "networkidle" });
   await page.waitForSelector(".app-shell");
+  await page.waitForFunction(() => document.documentElement.dataset.theme === "dark");
   await page.getByTitle("Mermaid.md").click();
   await page.waitForSelector(".mermaid-preview svg", { timeout: 10000 });
   await page.screenshot({ path: join(outDir, "tickpad-desktop.png"), fullPage: true });
