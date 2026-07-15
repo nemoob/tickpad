@@ -1,4 +1,5 @@
 import "./styles.css"
+import "./responsive.css"
 
 const year = document.querySelector<HTMLElement>("#year")
 

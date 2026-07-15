@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f8f8f7" />
+    <meta name="theme-color" content="#0b0d11" />
     <meta
       name="description"
       content="Tickpad 是一款插件优先、所见即所得的 Markdown 桌面编辑器。"
@@ -23,6 +23,7 @@
       <a class="brand" href="#top" aria-label="Tickpad 首页">
         <img src="/tickpad-icon.png" alt="" width="32" height="32" />
         <span>Tickpad</span>
+        <small>PREVIEW</small>
       </a>
       <nav aria-label="主导航">
         <a href="#features">功能</a>
@@ -37,9 +38,9 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">为 macOS 打造</p>
+          <p class="eyebrow"><span>00</span> Markdown for builders</p>
           <h1 id="hero-title">Tickpad</h1>
-          <p class="hero-lead">写下 Markdown，看到最终效果。</p>
+          <p class="hero-lead">写作、预览、扩展，在同一个本地工作区。</p>
           <p class="hero-detail">
             一个安静、快速、插件优先的本地编辑器。管理文件、绘制 Mermaid，按你的方式扩展写作流程。
           </p>
@@ -51,14 +52,32 @@
               查看源代码
             </a>
           </div>
-          <p class="release-note">Apple Silicon · 开源预览版 · MIT License</p>
+          <ul class="hero-meta" aria-label="产品信息">
+            <li><span>LOCAL-FIRST</span><strong>FILES STAY YOURS</strong></li>
+            <li><span>PLUGIN-READY</span><strong>OPEN API</strong></li>
+            <li><span>RELEASE</span><strong>v0.1.0 PREVIEW</strong></li>
+          </ul>
         </div>
-        <div class="hero-product" role="img" aria-label="Tickpad 编辑器中的 Mermaid 实时预览界面"></div>
+        <div class="hero-product">
+          <div class="product-bar" aria-hidden="true">
+            <span class="window-dots"><i></i><i></i><i></i></span>
+            <span>LOCAL / PLUGINS / MERMAID.MD</span>
+            <span>100%</span>
+          </div>
+          <div class="product-shot">
+            <img
+              src="/tickpad-app.png"
+              alt="Tickpad 编辑器中的 Mermaid 实时预览界面"
+              width="1920"
+              height="1080"
+            />
+          </div>
+        </div>
       </section>
 
       <section class="feature-band" id="features" aria-labelledby="features-title">
         <div class="section-heading">
-          <p class="eyebrow">核心体验</p>
+          <p class="eyebrow"><span>01</span> 核心体验</p>
           <h2 id="features-title">写作工具应该让内容成为主角</h2>
           <p>从打开文件到完成发布，界面保持克制，能力保持完整。</p>
         </div>
@@ -98,7 +117,7 @@
 
       <section class="plugin-section" id="plugins" aria-labelledby="plugins-title">
         <div class="plugin-copy">
-          <p class="eyebrow">开放扩展</p>
+          <p class="eyebrow"><span>02</span> 开放扩展</p>
           <h2 id="plugins-title">编辑器保持简单，能力交给插件</h2>
           <p>
             命令、面板、Markdown 块和导出器都通过公开 API 注册。插件权限默认拒绝，由宿主明确授权。
@@ -112,7 +131,9 @@
             </a>
           </div>
         </div>
-        <pre class="plugin-code" aria-label="Tickpad 插件注册示例"><code>export default {
+        <div class="plugin-console">
+          <div class="console-bar"><span>PLUGIN.TS</span><span>PUBLIC API / 0.1</span></div>
+          <pre class="plugin-code" aria-label="Tickpad 插件注册示例"><code><span class="prompt">$</span> export default {
   manifest: {
     id: "hello.tickpad",
     permissions: ["document:read"]
@@ -125,11 +146,12 @@
     })
   }
 }</code></pre>
+        </div>
       </section>
 
       <section class="download-band" aria-labelledby="download-title">
         <div>
-          <p class="eyebrow">公开预览</p>
+          <p class="eyebrow"><span>03</span> 公开预览</p>
           <h2 id="download-title">把 Tickpad 放到你的桌面</h2>
           <p>
             当前版本支持 macOS Apple Silicon。安装包尚未进行 Apple Developer 签名和公证，首次启动可能需要在 Finder 中右键选择“打开”。
@@ -145,6 +167,7 @@
       <div class="footer-brand">
         <img src="/tickpad-icon.png" alt="" width="28" height="28" />
         <span>Tickpad</span>
+        <small>LOCAL MARKDOWN SYSTEM</small>
       </div>
       <div class="footer-links">
         <a href="https://github.com/nemoob/tickpad">GitHub</a>

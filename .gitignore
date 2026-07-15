@@ -6,6 +6,8 @@ apps/*/release/
 coverage/
 test-results/
 .playwright-cli/
+.superpowers/
+/output/
 .vercel/
 .idea/
 *.log
